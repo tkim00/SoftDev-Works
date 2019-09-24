@@ -9,6 +9,7 @@
   <head>
     <title> {{ title }} </title>
     <h1> {{ heading }} </h1>
+    <h2> {{ h2 }} </h2>
   </head>
   <style>
     th {
@@ -17,7 +18,8 @@
   </style>
   <body>
     {{ team }} <br>
-    Random job: {{ job }} <br> <br>
+    Random job: {{ job }} <br>
+    Link: <a href="{{ link }}">{{ link }}</a> <br> <br>
     <table> <!-- credits to Tammy Chen for catching me up -->
       <tr>
         <th> {{ jobs }} </th>
@@ -26,7 +28,7 @@
       {% for item in collection %}
         <tr>
           <td> {{ item }} </td>
-          <td> {{ collection[item] }} </td>
+          <td> {{ collection[item][0] }} </td>
         </tr>
       {% endfor %}
     </table>
