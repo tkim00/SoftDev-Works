@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{foo}}</title>
+    </head>
+    <body>
+      {% if user == "Bob" and pword == "Green Cheese" %}
+        <h1> Welcome {{user}}! </h1>
+      {% else %}
+        <h1> {{user}} or {{pword}} does not exist </h1>
+      {% endif %}
+    <form action = "/">
+      <input type="submit" value="Log Out">
+    </form>
+    </body>
+</html>
