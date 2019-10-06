@@ -5,13 +5,8 @@
     </head>
     <body>
     <form action = "/">
-      {% if user == "Bob" and pword == "Green Cheese" %}
         <h1> Welcome {{user}}! </h1>
         <input type="submit" value="Log Out">
-      {% else %}
-        <h1> Username {{user}} or password {{pword}} does not exist </h1>
-        <input type="submit" value="Retry">
-      {% endif %}
     </form>
     </body>
 </html>
