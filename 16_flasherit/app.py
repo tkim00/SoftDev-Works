@@ -8,17 +8,14 @@ app = Flask(__name__)
 
 @app.route("/")
 def login():
-	return render_template("login.html", foo = "Login Page",
-							user = request.args['username'],
-							pword = request.args['password'])
+	return render_template("login.html", foo = "Login Page")
 
 @app.route("/Welcome")
 def welcome():
-	return render_template("welcome.html", foo = "Welcome Page")
-
-@app.route("/Fail")
-def fail():
-	return render_template("fail.html", foo = "Fail Page")
+	return render_template("welcome.html",
+							foo = "Welcome Page",
+							user = request.args['username'],
+							pword = request.args['password'])
 
 if __name__ == "__main__":
 	app.debug = True
