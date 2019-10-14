@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>{{foo}}</title>
-    </head>
-    <body>
+{% extends "base.html" %}
+{% block title %} Welcome Page {% endblock %}
+{% block body %}
+<h1> Welcome {{user}}! </h1>
     <form action = "/">
-      {% if user == "Bob" and pword == "Green Cheese" %}
-        <h1> Welcome {{user}}! </h1>
-        <input type="submit" value="Log Out">
-      {% else %}
-        <h1> Username {{user}} or password {{pword}} does not exist </h1>
-        <input type="submit" value="Retry">
-      {% endif %}
+      <input type="submit" value="Log Out">
     </form>
-    </body>
-</html>
+{% endblock %}
