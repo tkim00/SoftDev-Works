@@ -2,4 +2,4 @@
 
 
 ## 20_css
-[lorem ipsum generator] (https://loremipsum.io/generator/)
+[lorem ipsum generator](https://loremipsum.io/generator/) 
