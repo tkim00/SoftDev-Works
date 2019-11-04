@@ -19,4 +19,9 @@ a{
 a:hover, a:active {
   background-color: #A8DADC;
   color: #1D3557;
+  text-decoration: underline;
+}
+input:hover, input:active {
+  background-color: #A8DADC;
+  color: #1D3557;
 }
