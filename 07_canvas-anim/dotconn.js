@@ -5,14 +5,15 @@ const stop_butt = document.getElementById('stop');
 //var start = null;
 var radius = 0;
 var state = null;
+var req; // --> for canceling the requestAnimationFrame
 
-const drawCircle = function(timestamp) {
+const drawCircle = function() {
   // if(!start) start = timestamp;
   // var progress = timestamp - start;
   // if(progress < 2000) {
   //   window.requestAnimationFrame(drawCircle)
   // }
-  window.requestAnimationFrame(drawCircle);
+  req = window.requestAnimationFrame(drawCircle);
   ctx.clearRect(0,0,canvas.width,canvas.height);
   drawCircleH(radius);
   if (radius >= canvas.width/2) {
@@ -36,14 +37,19 @@ const drawCircleH = function(radius) {
 }
 
 start_butt.addEventListener('click', () => {
-  if (state == null) {
-    console.log("press");
-    console.log(state);
-    console.log(radius);
-    window.requestAnimationFrame(drawCircle);
+  // if (state == null) {
+  //   console.log("press");
+  //   console.log(state);
+  //   console.log(radius);
+  //   window.requestAnimationFrame(drawCircle);
+  //   drawCircle();
+  // }
+  if (state != null) {
+    window.cancelAnimationFrame(req);
   }
+  drawCircle();
 })
 stop_butt.addEventListener('click', () => {
-  //window.cancelAnimationFrame();
-  state = null;
+  window.cancelAnimationFrame(req);
+  //state = null;
 });
