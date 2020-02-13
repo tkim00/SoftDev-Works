@@ -36,9 +36,14 @@ const drawCircleH = function(radius) {
 }
 
 start_butt.addEventListener('click', () => {
-  //console.log("press");
-  window.requestAnimationFrame(drawCircle);
+  if (state == null) {
+    console.log("press");
+    console.log(state);
+    console.log(radius);
+    window.requestAnimationFrame(drawCircle);
+  }
 })
-// document.addEventListener('click', () => {
-//   ctx.cancelAnimationFrame();
-// });
+stop_butt.addEventListener('click', () => {
+  //window.cancelAnimationFrame();
+  state = null;
+});
